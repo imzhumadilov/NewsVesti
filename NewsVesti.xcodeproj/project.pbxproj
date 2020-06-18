@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		28D79789249B62F9007A8A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D79788249B62F9007A8A63 /* AppDelegate.swift */; };
 		28D7978B249B62F9007A8A63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D7978A249B62F9007A8A63 /* SceneDelegate.swift */; };
-		28D7978D249B62F9007A8A63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D7978C249B62F9007A8A63 /* ViewController.swift */; };
 		28D79790249B62F9007A8A63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D7978E249B62F9007A8A63 /* Main.storyboard */; };
 		28D79792249B62FA007A8A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D79791249B62FA007A8A63 /* Assets.xcassets */; };
 		28D79795249B62FA007A8A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D79793249B62FA007A8A63 /* LaunchScreen.storyboard */; };
+		28D7979D249B63C4007A8A63 /* AllNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D7979C249B63C4007A8A63 /* AllNewsTableViewCell.swift */; };
+		28D7979F249B63F5007A8A63 /* AllNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D7979E249B63F4007A8A63 /* AllNewsTableViewController.swift */; };
+		28D797A1249B6464007A8A63 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D797A0249B6464007A8A63 /* XMLParser.swift */; };
+		28D797A3249B6E50007A8A63 /* FullNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D797A2249B6E50007A8A63 /* FullNewsViewController.swift */; };
+		28D797A7249B6EB9007A8A63 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D797A6249B6EB9007A8A63 /* CategoriesTableViewController.swift */; };
+		28D797A9249B90D8007A8A63 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D797A8249B90D8007A8A63 /* Categories.swift */; };
+		28D797AB249B9126007A8A63 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D797AA249B9126007A8A63 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28D79785249B62F9007A8A63 /* NewsVesti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsVesti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D79788249B62F9007A8A63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D7978A249B62F9007A8A63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		28D7978C249B62F9007A8A63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28D7978F249B62F9007A8A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28D79791249B62FA007A8A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28D79794249B62FA007A8A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28D79796249B62FA007A8A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D7979C249B63C4007A8A63 /* AllNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsTableViewCell.swift; sourceTree = "<group>"; };
+		28D7979E249B63F4007A8A63 /* AllNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsTableViewController.swift; sourceTree = "<group>"; };
+		28D797A0249B6464007A8A63 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		28D797A2249B6E50007A8A63 /* FullNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNewsViewController.swift; sourceTree = "<group>"; };
+		28D797A6249B6EB9007A8A63 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		28D797A8249B90D8007A8A63 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		28D797AA249B9126007A8A63 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				28D79787249B62F9007A8A63 /* NewsVesti */,
+				28D797AF249B924E007A8A63 /* Supports */,
 				28D79786249B62F9007A8A63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +69,52 @@
 		28D79787249B62F9007A8A63 /* NewsVesti */ = {
 			isa = PBXGroup;
 			children = (
-				28D79788249B62F9007A8A63 /* AppDelegate.swift */,
-				28D7978A249B62F9007A8A63 /* SceneDelegate.swift */,
-				28D7978C249B62F9007A8A63 /* ViewController.swift */,
-				28D7978E249B62F9007A8A63 /* Main.storyboard */,
-				28D79791249B62FA007A8A63 /* Assets.xcassets */,
-				28D79793249B62FA007A8A63 /* LaunchScreen.storyboard */,
-				28D79796249B62FA007A8A63 /* Info.plist */,
+				28D797AC249B91CC007A8A63 /* Model */,
+				28D797AD249B91E1007A8A63 /* Controller */,
+				28D797AE249B9218007A8A63 /* View */,
 			);
 			path = NewsVesti;
+			sourceTree = "<group>";
+		};
+		28D797AC249B91CC007A8A63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28D797A0249B6464007A8A63 /* XMLParser.swift */,
+				28D797A8249B90D8007A8A63 /* Categories.swift */,
+				28D797AA249B9126007A8A63 /* String.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28D797AD249B91E1007A8A63 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28D7979E249B63F4007A8A63 /* AllNewsTableViewController.swift */,
+				28D7979C249B63C4007A8A63 /* AllNewsTableViewCell.swift */,
+				28D797A2249B6E50007A8A63 /* FullNewsViewController.swift */,
+				28D797A6249B6EB9007A8A63 /* CategoriesTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		28D797AE249B9218007A8A63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28D7978E249B62F9007A8A63 /* Main.storyboard */,
+				28D79793249B62FA007A8A63 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28D797AF249B924E007A8A63 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				28D79788249B62F9007A8A63 /* AppDelegate.swift */,
+				28D7978A249B62F9007A8A63 /* SceneDelegate.swift */,
+				28D79791249B62FA007A8A63 /* Assets.xcassets */,
+				28D79796249B62FA007A8A63 /* Info.plist */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D7978D249B62F9007A8A63 /* ViewController.swift in Sources */,
+				28D7979F249B63F5007A8A63 /* AllNewsTableViewController.swift in Sources */,
+				28D797A9249B90D8007A8A63 /* Categories.swift in Sources */,
+				28D7979D249B63C4007A8A63 /* AllNewsTableViewCell.swift in Sources */,
+				28D797AB249B9126007A8A63 /* String.swift in Sources */,
+				28D797A3249B6E50007A8A63 /* FullNewsViewController.swift in Sources */,
 				28D79789249B62F9007A8A63 /* AppDelegate.swift in Sources */,
 				28D7978B249B62F9007A8A63 /* SceneDelegate.swift in Sources */,
+				28D797A1249B6464007A8A63 /* XMLParser.swift in Sources */,
+				28D797A7249B6EB9007A8A63 /* CategoriesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewsVesti/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewsVesti/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
