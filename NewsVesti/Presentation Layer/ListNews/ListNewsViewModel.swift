@@ -61,12 +61,14 @@ extension ListNewsViewModel: CategoriesNewsViewModelDelegate {
         let filteredCategories = categories.filter { $0.isSelected == true }
         var filteredNews = [News]()
         
-        for pieceOfNews in news {
-            for category in filteredCategories {
-                if category.name == pieceOfNews.category {
-                    filteredNews.append(pieceOfNews)
-                }
-            }
+        news.forEach { (pieceOfNews) in
+            
+            guard filteredCategories.first (where: { (category) -> Bool in
+                category.name == pieceOfNews.category
+            }) != nil
+                else { return }
+            
+            filteredNews.append(pieceOfNews)
         }
         
         loadDataCompletion?(.success((filteredNews, categories)))
