@@ -15,8 +15,6 @@ final class InfoNewsViewController: UIViewController {
     
     // MARK: - Props
     var viewModel: InfoNewsViewModel?
-    var router: InfoNewsRouterInput?
-    private var news: News?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,7 +28,6 @@ final class InfoNewsViewController: UIViewController {
     // MARK: - Setup functions
     private func setupComponents() {
         navigationItem.title = "News"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -48,12 +45,11 @@ final class InfoNewsViewController: UIViewController {
             
             switch result {
                 
-            case .success(let news):
-                self?.news = news
+            case .success:
                 self?.tableView.reloadData()
                 
-            case .failure:
-                break
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -74,7 +70,7 @@ extension InfoNewsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView
                 .dequeueReusableCell(withIdentifier: ImageCell.id,
                                      for: indexPath) as? ImageCell,
-                let news = news else { return UITableViewCell() }
+                  let news = viewModel?.news else { return UITableViewCell() }
             
             cell.setup(imageURL: news.imageUrl)
             return cell
@@ -83,7 +79,7 @@ extension InfoNewsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView
                 .dequeueReusableCell(withIdentifier: InformationCell.id,
                                      for: indexPath) as? InformationCell,
-                let news = news else { return UITableViewCell() }
+                  let news = viewModel?.news else { return UITableViewCell() }
             
             cell.setup(name: news.title, info: news.content)
             return cell

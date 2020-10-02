@@ -13,7 +13,7 @@ protocol InfoNewsViewModelInput {
 class InfoNewsViewModel {
     
     // MARK: - Props
-    private var news: News?
+    var news: News?
     var loadDataCompletion: ((Result<News, Error>) -> Void)?
     
     // MARK: - Public functions

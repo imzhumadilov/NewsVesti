@@ -16,10 +16,6 @@ enum InfoNewsConfigurator {
     static func configure(with reference: InfoNewsViewController) -> InfoNewsViewModelInput {
         let viewModel = InfoNewsViewModel()
         
-        let router = InfoNewsRouter()
-        router.viewController = reference
-        
-        reference.router = router
         reference.viewModel = viewModel
         
         return viewModel

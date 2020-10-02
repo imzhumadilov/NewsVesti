@@ -16,8 +16,6 @@ final class ListNewsViewController: UIViewController {
     // MARK: - Props
     var viewModel: ListNewsViewModel?
     var router: ListNewsRouterInput?
-    private var news = [News]()
-    private var categories = [Categories]()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -51,13 +49,8 @@ final class ListNewsViewController: UIViewController {
             
             switch result {
                 
-            case .success(let data):
-                self?.news = data.news
-                self?.categories = data.categories
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
+            case .success:
+                self?.tableView.reloadData()
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -74,6 +67,7 @@ final class ListNewsViewController: UIViewController {
     
     @objc
     private func rightBarButtonTapped() {
+        guard let categories = viewModel?.categories else { return }
         router?.presentCategories(with: categories)
     }
 }
@@ -82,14 +76,16 @@ final class ListNewsViewController: UIViewController {
 extension ListNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        news.count
+        guard let news = viewModel?.news else { return 0 }
+        return news.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView
             .dequeueReusableCell(withIdentifier: DescriptionCell.id,
-                                 for: indexPath) as? DescriptionCell else { return UITableViewCell() }
+                                 for: indexPath) as? DescriptionCell,
+              let news = viewModel?.news else { return UITableViewCell() }
         
         let pieceOfNews = news[indexPath.row]
         cell.setup(title: pieceOfNews.title, date: pieceOfNews.pubDate)
@@ -97,6 +93,7 @@ extension ListNewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let news = viewModel?.news else { return }
         router?.presentInfoNews(with: news[indexPath.row])
     }
 }

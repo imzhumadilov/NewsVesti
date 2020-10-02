@@ -17,8 +17,9 @@ class ListNewsViewModel {
     // MARK: - Props
     var loadDataCompletion: ((Result<(news: [News], categories: [Categories]), Error>) -> Void)?
     private let newsService = NewsService()
-    private var news = [News]()
-    private var categories = [Categories]()
+    var sourceNews = [News]()
+    var news = [News]()
+    var categories = [Categories]()
     
     // MARK: - Public functions
     public func loadData() {
@@ -35,6 +36,7 @@ class ListNewsViewModel {
                     categoriesSet.insert(Categories(name: $0.category, isSelected: true))
                 }
                 
+                self.sourceNews = news
                 self.news = news
                 self.categories = categoriesSet.sorted(by: { $0.name > $1.name })
                 self.loadDataCompletion?(.success((news, self.categories)))
@@ -59,19 +61,19 @@ extension ListNewsViewModel: CategoriesNewsViewModelDelegate {
         self.categories = categories
         
         let filteredCategories = categories.filter { $0.isSelected == true }
-        var filteredNews = [News]()
+        news = []
         
-        news.forEach { (pieceOfNews) in
+        sourceNews.forEach { (pieceOfNews) in
             
             guard filteredCategories.first (where: { (category) -> Bool in
                 category.name == pieceOfNews.category
             }) != nil
                 else { return }
             
-            filteredNews.append(pieceOfNews)
+            news.append(pieceOfNews)
         }
         
-        loadDataCompletion?(.success((filteredNews, categories)))
+        loadDataCompletion?(.success((news, categories)))
     }
 }
 

@@ -24,7 +24,9 @@ class NewsService: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let error = error {
-                completionHandler?(.failure(error))
+                DispatchQueue.main.async {
+                    completionHandler?(.failure(error))
+                }
                 return
             }
             
@@ -77,6 +79,8 @@ extension NewsService: XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        parserCompletionHandler?(.success(news))
+        DispatchQueue.main.async {
+            self.parserCompletionHandler?(.success(self.news))
+        }
     }
 }
